@@ -1,0 +1,121 @@
+<xsd:schema xmlns:xsd='http://www.w3.org/2001/XMLSchema'
+            targetNamespace=""
+            xmlns=""
+            elementFormDefault='qualified'>
+
+    <xsd:element name="table" type="Table"/>
+
+    <xsd:complexType name="Label" mixed="true">
+        <xsd:choice minOccurs="0" maxOccurs="unbounded">
+            <xsd:element name="br" type="Break"/>
+            <xsd:element name="font" type="Font"/>
+            <xsd:element name="table" type="Table"/>
+        </xsd:choice>
+    </xsd:complexType>
+
+    <xsd:complexType name="Table">
+        <xsd:sequence>
+            <xsd:element name="tr" type="Row" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+        <xsd:attribute name="align" type="Alignment" default="center"/>
+        <xsd:attribute name="bgcolor" type="xsd:string"/>
+        <xsd:attribute name="color" type="xsd:string"/>
+        <xsd:attribute name="border" type="xsd:int"/>
+        <xsd:attribute name="cellborder" type="xsd:int"/>
+        <xsd:attribute name="cellpadding" type="xsd:int"/>
+        <xsd:attribute name="cellspacing" type="xsd:int"/>
+        <xsd:attribute name="fixedsize" type="xsd:boolean"/>
+        <xsd:attribute name="height" type="xsd:int"/>
+        <xsd:attribute name="href" type="xsd:string"/>
+        <xsd:attribute name="port" type="xsd:string"/>
+        <xsd:attribute name="target" type="xsd:string"/>
+        <xsd:attribute name="title" type="xsd:string"/>
+        <xsd:attribute name="tooltip" type="xsd:string"/>
+        <xsd:attribute name="valign" type="VerticalAlignment" default="middle"/>
+        <xsd:attribute name="width" type="xsd:int"/>
+    </xsd:complexType>
+
+    <xsd:complexType name="Row">
+        <xsd:sequence>
+            <xsd:element name="td" type="Cell" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="Cell" mixed="true">
+        <xsd:sequence>
+            <xsd:element name="table" type="Table" minOccurs="0"/>
+            <xsd:element name="img" type="Image" minOccurs="0"/>
+            <xsd:element name="font" type="Font" minOccurs="0" maxOccurs="unbounded"/>
+            <xsd:element name="br" type="Break" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+        <xsd:attribute name="align" type="ExtendedAlignment" default="center"/>
+        <xsd:attribute name="balign" type="Alignment" default="center"/>
+        <xsd:attribute name="bgcolor" type="xsd:string"/>
+        <xsd:attribute name="border" type="xsd:int"/>
+        <xsd:attribute name="cellpadding" type="xsd:int"/>
+        <xsd:attribute name="cellspacing" type="xsd:int"/>
+        <xsd:attribute name="colspan" type="xsd:int"/>
+        <xsd:attribute name="fixedSize" type="xsd:boolean"/>
+        <xsd:attribute name="height" type="xsd:int"/>
+        <xsd:attribute name="href" type="xsd:string"/>
+        <xsd:attribute name="port" type="xsd:string"/>
+        <xsd:attribute name="rowspan" type="xsd:int"/>
+        <xsd:attribute name="target" type="xsd:string"/>
+        <xsd:attribute name="title" type="xsd:string"/>
+        <xsd:attribute name="tooltip" type="xsd:string"/>
+        <xsd:attribute name="valign" type="VerticalAlignment"/>
+        <xsd:attribute name="width" type="xsd:int"/>
+    </xsd:complexType>
+
+    <xsd:complexType name="Font">
+        <xsd:attribute name="color" type="xsd:string"/>
+        <xsd:attribute name="face" type="xsd:string"/>
+        <xsd:attribute name="point-size" type="xsd:int"/>
+    </xsd:complexType>
+
+    <xsd:complexType name="Break">
+        <xsd:attribute name="align" type="Alignment"/>
+    </xsd:complexType>
+
+    <xsd:complexType name="Image">
+        <xsd:attribute name="scale" type="Scale"/>
+        <xsd:attribute name="src" type="xsd:string"/>
+    </xsd:complexType>
+
+    <xsd:simpleType name="Alignment">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="center"/>
+            <xsd:enumeration value="left"/>
+            <xsd:enumeration value="right"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="ExtendedAlignment">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="center"/>
+            <xsd:enumeration value="left"/>
+            <xsd:enumeration value="right"/>
+            <xsd:enumeration value="text"/>            
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="VerticalAlignment">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="middle"/>
+            <xsd:enumeration value="bottom"/>
+            <xsd:enumeration value="top"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="Scale">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="false"/>
+            <xsd:enumeration value="true"/>
+            <xsd:enumeration value="width"/>
+            <xsd:enumeration value="height"/>
+            <xsd:enumeration value="both"/>
+        </xsd:restriction>
+
+    </xsd:simpleType>
+
+</xsd:schema>

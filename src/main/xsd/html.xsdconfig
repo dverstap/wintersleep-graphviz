@@ -1,0 +1,5 @@
+<xs:config xmlns:xs="http://xml.apache.org/xmlbeans/2004/02/xbean/config">
+    <xs:namespace uri="##any">
+        <xs:package>org.wintersleep.graphviz.html</xs:package>
+    </xs:namespace>
+</xs:config>
