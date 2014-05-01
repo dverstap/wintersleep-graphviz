@@ -34,19 +34,19 @@ class AttributeList<T extends AttributeList> {
     private LinkedHashMap<String, String> map = new LinkedHashMap<String, String>();
 
     @SuppressWarnings("unchecked")
-    public T addQuoted(String key, Object value) {
+    public T setQuoted(String key, Object value) {
         assert (value != null);
         map.put(key, "\"" + value + "\"");
         return (T) this;
     }
 
     @SuppressWarnings("unchecked")
-    public T addUnquoted(String key, Object value) {
+    public T setUnquoted(String key, Object value) {
         map.put(key, value == null ? null : value.toString());
         return (T) this;
     }
 
-    public T addStrings(String key, String separator, String... strs) {
+    public T setStrings(String key, String separator, String... strs) {
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < strs.length; i++) {
             String s = strs[i];
@@ -55,14 +55,14 @@ class AttributeList<T extends AttributeList> {
             }
             sb.append(s);
         }
-        return addQuoted(key, sb.toString());
+        return setQuoted(key, sb.toString());
     }
 
-    public <E extends Enum<E>> T addEnum(String key, E e) {
-        return addQuoted(key, e.name().toLowerCase());
+    public <E extends Enum<E>> T setEnum(String key, E e) {
+        return setQuoted(key, e.name().toLowerCase());
     }
 
-    public <E extends Enum<E>> T addEnums(String key, String separator, Enum<E>... enums) {
+    public <E extends Enum<E>> T setEnums(String key, String separator, Enum<E>... enums) {
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < enums.length; i++) {
             Enum<E> e = enums[i];
@@ -71,12 +71,12 @@ class AttributeList<T extends AttributeList> {
             }
             sb.append(e.name().toLowerCase());
         }
-        return addQuoted(key, sb.toString());
+        return setQuoted(key, sb.toString());
     }
 
-    protected T addColor(String attributeName, Color bgColor) {
+    protected T setColor(String attributeName, Color bgColor) {
         String s = "#" + toHex(bgColor.getRed(), 2) + "%" + toHex(bgColor.getGreen(), 2) + "%" + toHex(bgColor.getBlue(), 2) + "%";
-        return addQuoted(attributeName, s);
+        return setQuoted(attributeName, s);
     }
 
     protected String toHex(int i, int strLen) {

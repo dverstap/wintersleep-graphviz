@@ -23,22 +23,22 @@ package org.wintersleep.graphviz;
 public class NodeAttributeList extends ENGCAttributeList<NodeAttributeList> {
 
     public NodeAttributeList setShape(String shape) {
-        return addUnquoted("shape", shape);
+        return setUnquoted("shape", shape);
     }
 
     public NodeAttributeList setStyle(String style) {
-        return addQuoted("style", style);
+        return setQuoted("style", style);
     }
 
     public NodeAttributeList setWidth(double width) {
-        return addUnquoted("width", width);
+        return setUnquoted("width", width);
     }
 
     public NodeAttributeList setHeight(double height) {
-        return addUnquoted("height", height);
+        return setUnquoted("height", height);
     }
 
     public NodeAttributeList setLabelFontSize(int labelFontSize) {
-        return addQuoted("labelfontsize", labelFontSize);
+        return setQuoted("labelfontsize", labelFontSize);
     }
 }

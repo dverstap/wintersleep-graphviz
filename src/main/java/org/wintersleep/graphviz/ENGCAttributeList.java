@@ -28,23 +28,23 @@ import java.util.Collections;
 
 public class ENGCAttributeList<T extends ENGCAttributeList> extends AttributeList<T> {
     public T setFontName(String fontName) {
-        return addQuoted("fontname", fontName);
+        return setQuoted("fontname", fontName);
     }
 
     public T setFontColor(String fontColor) {
-        return addQuoted("fontcolor", fontColor);
+        return setQuoted("fontcolor", fontColor);
     }
 
     public T setFontColor(Color fontColor) {
-        return addColor("fontcolor", fontColor);
+        return setColor("fontcolor", fontColor);
     }
 
     public T setFontSize(double fontSize) {
-        return addUnquoted("fontsize", fontSize);
+        return setUnquoted("fontsize", fontSize);
     }
 
     public T setLabel(String label) {
-        return addQuoted("label", label);
+        return setQuoted("label", label);
     }
 
     public T setLabel(TableDocument table) {
@@ -53,7 +53,7 @@ public class ENGCAttributeList<T extends ENGCAttributeList> extends AttributeLis
                 .setSaveImplicitNamespaces(Collections.singletonMap("html", "http://uml.org/graphviz/html"));
         String str = table.xmlText(options);
 
-        return addUnquoted("label", "<" + str + ">");
+        return setUnquoted("label", "<" + str + ">");
     }
 
 }

@@ -25,50 +25,50 @@ import java.awt.*;
 public class GraphAttributeList extends ENGCAttributeList<GraphAttributeList> {
 
     public GraphAttributeList setRankDir(RankDir rankDir) {
-        return addUnquoted("rankdir", rankDir.name());
+        return setUnquoted("rankdir", rankDir.name());
     }
 
     public GraphAttributeList setRankSep(int i) {
-        return addUnquoted("ranksep", i);
+        return setUnquoted("ranksep", i);
     }
 
     public GraphAttributeList setBgColor(String colorName) {
-        return addUnquoted("bgColor", colorName);
+        return setUnquoted("bgColor", colorName);
     }
 
     public GraphAttributeList setBgColor(Color bgColor) {
-        return addColor("bgColor", bgColor);
+        return setColor("bgColor", bgColor);
     }
 
     public GraphAttributeList setSize(String size) {
-        return addQuoted("size", size);
+        return setQuoted("size", size);
     }
 
     public GraphAttributeList setSize(double width, double height) {
-        return addQuoted("size", width + "," + height);
+        return setQuoted("size", width + "," + height);
     }
 
     public GraphAttributeList setOrdering(String ordering) {
-        return addUnquoted("ordering", ordering);
+        return setUnquoted("ordering", ordering);
     }
 
     public GraphAttributeList setRotate(int rotate) {
-        return addUnquoted("rotate", rotate);
+        return setUnquoted("rotate", rotate);
     }
 
     public GraphAttributeList setNodeSep(double nodeSep) {
-        return addUnquoted("nodesep", nodeSep);
+        return setUnquoted("nodesep", nodeSep);
     }
 
     public GraphAttributeList setCompound(boolean compound) {
-        return addUnquoted("compound", true);
+        return setUnquoted("compound", true);
     }
 
     public GraphAttributeList setStyle(String style) {
-        return addQuoted("style", style);
+        return setQuoted("style", style);
     }
 
     public GraphAttributeList setOrientation(Orientation orientation) {
-        return addUnquoted("orientation", orientation.name().toLowerCase());
+        return setUnquoted("orientation", orientation.name().toLowerCase());
     }
 }

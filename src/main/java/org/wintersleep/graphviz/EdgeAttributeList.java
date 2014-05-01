@@ -23,59 +23,59 @@ package org.wintersleep.graphviz;
 public class EdgeAttributeList extends ENGCAttributeList<EdgeAttributeList> {
 
     public EdgeAttributeList setLabelFontName(String fontName) {
-        return addQuoted("labelfontname", fontName);
+        return setQuoted("labelfontname", fontName);
     }
 
     public EdgeAttributeList setLabelFontSize(int fontSize) {
-        return addUnquoted("labelfontsize", fontSize);
+        return setUnquoted("labelfontsize", fontSize);
     }
 
     public EdgeAttributeList setDir(Direction direction) {
-        return addUnquoted("dir", direction.name().toLowerCase());
+        return setUnquoted("dir", direction.name().toLowerCase());
     }
 
     public EdgeAttributeList setArrowTail(Arrow arrow) {
-        return addEnum("arrowtail", arrow);
+        return setEnum("arrowtail", arrow);
     }
 
     public EdgeAttributeList setLTail(DiGraph subGraph) {
-        return addUnquoted("ltail", "cluster_" + subGraph.getId());
+        return setUnquoted("ltail", "cluster_" + subGraph.getId());
     }
 
     public EdgeAttributeList setArrowHead(Arrow arrow) {
-        return addEnum("arrowhead", arrow);
+        return setEnum("arrowhead", arrow);
     }
 
     public EdgeAttributeList setLHead(DiGraph subGraph) {
-        return addUnquoted("lhead", "cluster_" + subGraph.getId());
+        return setUnquoted("lhead", "cluster_" + subGraph.getId());
     }
 
     public EdgeAttributeList setStyle(String... styles) {
-        return addStrings("style", ",", styles);
+        return setStrings("style", ",", styles);
     }
 
     public EdgeAttributeList setStyle(EdgeStyle... styles) {
-        return addEnums("style", ",", styles);
+        return setEnums("style", ",", styles);
     }
 
     public EdgeAttributeList setTailLabel(String label) {
-        return addQuoted("taillabel", label);
+        return setQuoted("taillabel", label);
     }
 
     public EdgeAttributeList setHeadLabel(String label) {
-        return addQuoted("headlabel", label);
+        return setQuoted("headlabel", label);
     }
 
     public EdgeAttributeList setLabelAngle(double angle) {
-        return addUnquoted("labelangle", angle);
+        return setUnquoted("labelangle", angle);
     }
 
     public EdgeAttributeList setLabelDistance(double distance) {
-        return addUnquoted("labeldistance", distance);
+        return setUnquoted("labeldistance", distance);
     }
 
     public EdgeAttributeList setConstraint(boolean constraint) {
-        return addUnquoted("constraint", Boolean.toString(constraint));
+        return setUnquoted("constraint", Boolean.toString(constraint));
     }
 
 }
