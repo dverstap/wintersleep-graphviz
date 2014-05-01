@@ -20,6 +20,7 @@ package org.wintersleep.graphviz;
  * #L%
  */
 
+import java.awt.*;
 import java.io.File;
 import java.io.IOException;
 
@@ -40,11 +41,11 @@ public class Example {
 
         // set attribute using a type-safe setter:
         a.addAttributeList()
-                .setShape("octagon");
+                .setColor(Color.RED);
 
         // set attribute using a generic string option:
         b.addAttributeList()
-                .setUnquoted("color", "red");
+                .setUnquoted("shape", "octagon");
 
         File outputDir = new File("/tmp");
         g.makeImageFile(outputDir, "png");

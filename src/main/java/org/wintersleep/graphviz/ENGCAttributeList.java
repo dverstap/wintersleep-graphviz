@@ -36,7 +36,7 @@ public class ENGCAttributeList<T extends ENGCAttributeList> extends AttributeLis
     }
 
     public T setFontColor(Color fontColor) {
-        return setColor("fontcolor", fontColor);
+        return _setColor("fontcolor", fontColor);
     }
 
     public T setFontSize(double fontSize) {
@@ -54,6 +54,14 @@ public class ENGCAttributeList<T extends ENGCAttributeList> extends AttributeLis
         String str = table.xmlText(options);
 
         return setUnquoted("label", "<" + str + ">");
+    }
+
+    public T setColor(String color) {
+        return setUnquoted("color", color);
+    }
+
+    public T setColor(Color color) {
+        return _setColor("color", color);
     }
 
 }

@@ -37,7 +37,7 @@ public class GraphAttributeList extends ENGCAttributeList<GraphAttributeList> {
     }
 
     public GraphAttributeList setBgColor(Color bgColor) {
-        return setColor("bgColor", bgColor);
+        return _setColor("bgColor", bgColor);
     }
 
     public GraphAttributeList setSize(String size) {

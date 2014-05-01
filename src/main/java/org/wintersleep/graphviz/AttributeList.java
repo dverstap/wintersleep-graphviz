@@ -74,8 +74,8 @@ class AttributeList<T extends AttributeList> {
         return setQuoted(key, sb.toString());
     }
 
-    protected T setColor(String attributeName, Color bgColor) {
-        String s = "#" + toHex(bgColor.getRed(), 2) + "%" + toHex(bgColor.getGreen(), 2) + "%" + toHex(bgColor.getBlue(), 2) + "%";
+    protected T _setColor(String attributeName, Color bgColor) {
+        String s = "#" + toHex(bgColor.getRed(), 2) + toHex(bgColor.getGreen(), 2) + toHex(bgColor.getBlue(), 2);
         return setQuoted(attributeName, s);
     }
 
