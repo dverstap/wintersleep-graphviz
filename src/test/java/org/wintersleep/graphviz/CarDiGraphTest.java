@@ -9,7 +9,6 @@ import org.wintersleep.graphviz.html.Cell;
 import org.wintersleep.graphviz.html.ExtendedAlignment;
 import org.wintersleep.graphviz.html.Table;
 import org.wintersleep.graphviz.html.TableDocument;
-import org.wintersleep.test.util.FileTestUtil;
 
 import java.awt.*;
 import java.io.File;

@@ -13,12 +13,14 @@ class AttributeList<T extends AttributeList> {
     // LinkedHashMap to keep the order for easy debugging
     private LinkedHashMap<String, String> map = new LinkedHashMap<String, String>();
 
+    @SuppressWarnings("unchecked")
     public T addQuoted(String key, Object value) {
         assert (value != null);
         map.put(key, "\"" + value + "\"");
         return (T) this;
     }
 
+    @SuppressWarnings("unchecked")
     public T addUnquoted(String key, Object value) {
         map.put(key, value == null ? null : value.toString());
         return (T) this;

@@ -17,7 +17,6 @@
 package org.wintersleep.graphviz;
 
 import org.junit.Test;
-import org.wintersleep.test.util.FileTestUtil;
 
 import java.io.File;
 import java.io.IOException;
